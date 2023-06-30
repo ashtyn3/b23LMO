@@ -8,9 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource JumpSound;
 
     [SerializeField]
-    private int SideSideCounter;
-
-    [SerializeField]
     private float jumpPower = 14f;
 
     [SerializeField]
@@ -23,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask Ground;
 
     private int JumpCounter;
-    [SerializeField]
-    private int SideSideNeeded;
 
 
     private enum MovementState { Idle, Running, Jumping, Falling };
@@ -43,8 +38,6 @@ public class PlayerMovement : MonoBehaviour
         Sprite = GetComponent<SpriteRenderer>();
         bcol = GetComponent<BoxCollider2D>();
         JumpCounter = 0;
-        SideSideCounter = 0;
-        SideSideNeeded = 5;
     }
 
     // Update is called once per frame
@@ -53,46 +46,18 @@ public class PlayerMovement : MonoBehaviour
         dirx = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirx * moveSpeed, rb.velocity.y);
 
-        if (IsGrounded())
-        {
-            JumpCounter = 1;
-            SideSideCounter = 0;
-
-        }
-
         if (Input.GetButtonDown("Jump") && JumpCounter <= 1)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             JumpSound.Play();
-            if (!IsGrounded())
-            {
-                JumpCounter++;
-            }
+            JumpCounter++;
         }
 
-        if (!IsGrounded() && Input.GetKeyDown("a") && (SideSideCounter % 2) == 1)
+        if(IsGrounded() && JumpCounter == 2)
         {
-            SideSideCounter++;
-            if (SideSideCounter >= SideSideNeeded)
-            {
-                SideSideCounter -= SideSideNeeded;
-                JumpCounter -= 1;
-            }
+            JumpCounter = 0;
         }
-
-        if (!IsGrounded() && Input.GetKeyDown("d") && (SideSideCounter % 2) == 0)
-        {
-            SideSideCounter++;
-            if (SideSideCounter >= SideSideNeeded)
-            {
-                SideSideCounter -= SideSideNeeded;
-                JumpCounter -= 1;
-            }
-        }
-
         DoAnimations();
-        
-        
 
     }
 
