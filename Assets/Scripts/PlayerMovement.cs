@@ -40,11 +40,14 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        Sprite = GetComponent<SpriteRenderer>();
+        Sprite = GetComponent<SpriteRenderer>();//SIDbf
         bcol = GetComponent<BoxCollider2D>();
         JumpCounter = 0;
         SideSideCounter = 0;
         SideSideNeeded = 5;
+        print("bing bong:"+ System.AppDomain.CurrentDomain.BaseDirectory);
+
+
     }
 
     // Update is called once per frame
