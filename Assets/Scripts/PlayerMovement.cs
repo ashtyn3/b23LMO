@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
         JumpCounter = 0;
         SideSideCounter = 0;
         SideSideNeeded = 5;
-        print("bing bong:"+ System.AppDomain.CurrentDomain.BaseDirectory);
 
 
     }
