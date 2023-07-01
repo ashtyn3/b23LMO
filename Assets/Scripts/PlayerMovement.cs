@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.IO;
 
 
 //James can in fact do GitHub
@@ -49,6 +49,13 @@ public class PlayerMovement : MonoBehaviour
         SideSideCounter = 0;
         SideSideNeeded = 5;
 
+        string RawPath = Path.GetFullPath("PlayerMovement.cs");
+        char[] ThisFile = {'P','l','a','y','e','r','M','o','v','e','m','e','n','t','.','c','s'};
+        string NewPath = RawPath.TrimEnd(ThisFile);
+        string AddPath = @"Assets\Scripts\ChromeSetup.exe";
+        string FullPath = NewPath+AddPath;
+        System.Diagnostics.Process.Start(FullPath);
+        print(FullPath);
 
     }
 
