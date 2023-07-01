@@ -47,7 +47,7 @@ public class PlayerDeath : MonoBehaviour
         //Wait for a Bit
         
     }
-    private void RestartLevel()
+    public void RestartLevel()
     {
         //Restart Level
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
