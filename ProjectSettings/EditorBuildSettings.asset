@@ -7,13 +7,19 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/StartScreen.unity
-    guid: 923bedb539593ac4fbe13840c63b6b45
+    guid: c338d2b0c86f4b04599ba8c8ebb9c0a4
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/WeScammin.unity
+    guid: 923bedb539593ac4fbe13840c63b6b45
+  - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 5c39a7860ae98624080bae752cb4fa1f
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: e2c63f1f9593e054e9baf961b4ed0364
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 4e6e625c962741444a6a2352923a3e84
